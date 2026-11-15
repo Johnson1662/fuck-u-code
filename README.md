@@ -1,5 +1,23 @@
 # fuck-u-code [![English](https://img.shields.io/badge/Docs-English-red?style=flat-square)](README.md) [![繁體中文](https://img.shields.io/badge/文檔-繁體中文-blue?style=flat-square)](README_ZH-TW.md) [![中文](https://img.shields.io/badge/文档-简体中文-blue?style=flat-square)](README_ZH.md) [![Русский](https://img.shields.io/badge/Docs-Русский-blue?style=flat-square)](README_RU.md)
 
+> [!NOTE]
+> **This is a maintained fork.** Upstream [`Done-0/fuck-u-code`](https://github.com/Done-0/fuck-u-code) has had no commits since 2026-09-07, so this fork carries the fixes it still needs. Same MIT license; all original authorship belongs to the upstream project.
+>
+> Differences from upstream `2.2.2`:
+>
+> - **Grammar loading works under npm and npx.** The wasm path was hard-coded to `<pkg>/node_modules/tree-sitter-wasms/out/*.wasm`, a layout only pnpm produces. Under npm/npx every language failed to load and silently fell back to the regex parser, which cannot see scopes: a function nested inside another scope had its end pinned to the end of that scope. On a 403-line file a 20-line function was reported as 250 lines with complexity 40 — overall score 83.9 with the regex parser versus 92.0 with real ASTs.
+> - **The fallback is no longer silent.** When a grammar cannot be loaded the run warns at the point of failure and prints a one-line summary naming the affected languages, because silently wrong scores are worse than a loud warning.
+>
+> Install from this fork:
+>
+> ```bash
+> npm i github:Johnson1662/fuck-u-code
+> npx -p github:Johnson1662/fuck-u-code eff-u-code analyze .
+> ```
+>
+> The first fix is also open upstream as [Done-0/fuck-u-code#165](https://github.com/Done-0/fuck-u-code/pull/165).
+
+
 <a href="https://trendshift.io/repositories/14999" target="_blank"><img src="https://trendshift.io/api/badge/repositories/14999" alt="Done-0%2Ffuck-u-code | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
 
 > [!TIP]
