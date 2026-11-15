@@ -15,7 +15,7 @@
 > npx -p github:Johnson1662/fuck-u-code eff-u-code analyze .
 > ```
 >
-> The first fix is also open upstream as [Done-0/fuck-u-code#165](https://github.com/Done-0/fuck-u-code/pull/165).
+> The wasm fix was opened upstream as [Done-0/fuck-u-code#165](https://github.com/Done-0/fuck-u-code/pull/165) and closed when the project stayed inactive; both commits apply cleanly if development resumes.
 
 
 <a href="https://trendshift.io/repositories/14999" target="_blank"><img src="https://trendshift.io/api/badge/repositories/14999" alt="Done-0%2Ffuck-u-code | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
